@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter | Basil Saji</title>
+<meta name="description" content="A SEPIC-Ćuk two-phase interleaved converter that takes a 150 V solar PV input and supplies a battery-charging port, a DC motor, and an inverter-fed AC load">
+<meta property="og:title" content="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter | Basil Saji"><meta property="og:description" content="A SEPIC-Ćuk two-phase interleaved converter that takes a 150 V solar PV input and supplies a battery-charging port, a DC motor, and an inverter-fed AC load">
+<meta property="og:image" content="../../assets/pages/final-year-project-simo-converter-01.jpg"><meta name="theme-color" content="#070b10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b10'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23f0913a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="../../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="none" stroke="#1c2a38" stroke-width="2"/><path d="M18 5 8 18h7l-2 9 11-14h-7z" fill="#f0913a"/></svg>BASIL_SAJI</a>
+  <ul><li><a href="../../#project">Project</a></li><li><a href="../../#internship">Internship</a></li><li><a href="../../#eto">ETO</a></li><li><a href="../../#documents">All documents</a></li></ul>
+</div></nav>
+
+<header class="rp-head"><div class="wrap">
+  <div class="crumb"><a href="../../">basil-saji</a> / <a href="../../#documents">documents</a> / final-year-project</div>
+  <span class="kind mono" style="color:var(--copper);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase">Final-year project report</span>
+  <h1>PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter</h1>
+  <div class="rp-meta"><span class="chip c">B.E. EEE (Marine)</span><span class="chip">AMET University</span><span class="chip">2023</span><span class="chip">34 slides</span></div>
+  <div class="btns">
+    <a class="btn primary" href="../../assets/docs/final-year-project-simo-converter.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/></svg>Download PDF</a>
+    <a class="btn" href="../../assets/docs/final-year-project-simo-converter.pdf" target="_blank" rel="noopener">Open original PDF</a>
+    <button class="btn" data-copy>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copy link</button>
+  </div>
+</div></header>
+<main class="wrap rp-body">
+  <aside class="rp-side">
+    <div class="card"><div class="label">Summary</div><p style="color:#c4d0db;font-size:.92rem">A SEPIC-Ćuk two-phase interleaved converter that takes a 150 V solar PV input and supplies a battery-charging port, a DC motor, and an inverter-fed AC load. The phases are switched 180° apart so their ripple currents cancel. It was simulated in MATLAB/Simulink and built in hardware around a PIC16F877A, IRF840 MOSFETs and an IR2110 driver.</p></div>
+    <div class="card"><div class="label">Details</div><table class="ds-table"><tr><td>Guide</td><td>Dr. T. Baldwin Immanuel, Assoc. Prof., EEE</td></tr><tr><td>Input</td><td>150 V DC from PV panel</td></tr><tr><td>Outputs</td><td>2 × DC + 1 × AC (inverter)</td></tr><tr><td>Control</td><td>PWM + PI controller</td></tr></table></div>
+    <div class="card"><div class="label">Inside this document</div><ul><li>Literature review of interleaved and multiport converters</li><li>Existing vs. proposed block diagram</li><li>SEPIC-Ćuk operation and PWM phase shifting</li><li>Simulink model with motor, inverter and battery results</li><li>Hardware: MCU, MOSFET, gate driver and power supply</li><li>Oscilloscope captures of PWM and inverter output</li></ul></div>
+    <div class="btns"><a class="btn" href="../../#documents">← All documents</a></div>
+  </aside>
+  <div class="pages">
+<figure><img src="../../assets/pages/final-year-project-simo-converter-01.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 1" loading="eager"><figcaption>SLIDE 1 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-02.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 2" loading="eager"><figcaption>SLIDE 2 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-03.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 3" loading="lazy"><figcaption>SLIDE 3 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-04.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 4" loading="lazy"><figcaption>SLIDE 4 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-05.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 5" loading="lazy"><figcaption>SLIDE 5 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-06.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 6" loading="lazy"><figcaption>SLIDE 6 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-07.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 7" loading="lazy"><figcaption>SLIDE 7 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-08.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 8" loading="lazy"><figcaption>SLIDE 8 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-09.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 9" loading="lazy"><figcaption>SLIDE 9 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-10.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 10" loading="lazy"><figcaption>SLIDE 10 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-11.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 11" loading="lazy"><figcaption>SLIDE 11 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-12.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 12" loading="lazy"><figcaption>SLIDE 12 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-13.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 13" loading="lazy"><figcaption>SLIDE 13 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-14.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 14" loading="lazy"><figcaption>SLIDE 14 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-15.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 15" loading="lazy"><figcaption>SLIDE 15 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-16.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 16" loading="lazy"><figcaption>SLIDE 16 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-17.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 17" loading="lazy"><figcaption>SLIDE 17 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-18.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 18" loading="lazy"><figcaption>SLIDE 18 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-19.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 19" loading="lazy"><figcaption>SLIDE 19 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-20.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 20" loading="lazy"><figcaption>SLIDE 20 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-21.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 21" loading="lazy"><figcaption>SLIDE 21 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-22.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 22" loading="lazy"><figcaption>SLIDE 22 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-23.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 23" loading="lazy"><figcaption>SLIDE 23 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-24.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 24" loading="lazy"><figcaption>SLIDE 24 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-25.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 25" loading="lazy"><figcaption>SLIDE 25 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-26.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 26" loading="lazy"><figcaption>SLIDE 26 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-27.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 27" loading="lazy"><figcaption>SLIDE 27 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-28.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 28" loading="lazy"><figcaption>SLIDE 28 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-29.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 29" loading="lazy"><figcaption>SLIDE 29 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-30.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 30" loading="lazy"><figcaption>SLIDE 30 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-31.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 31" loading="lazy"><figcaption>SLIDE 31 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-32.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 32" loading="lazy"><figcaption>SLIDE 32 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-33.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 33" loading="lazy"><figcaption>SLIDE 33 / 34</figcaption></figure>
+<figure><img src="../../assets/pages/final-year-project-simo-converter-34.jpg" alt="PV-based Single-Input Multiple-Output Two-Phase Interleaved DC-DC Converter, slide 34" loading="lazy"><figcaption>SLIDE 34 / 34</figcaption></figure>
+  </div>
+</main>
+<footer><div class="wrap"><span>© Basil Saji · Electrical &amp; Electronics Engineer (Marine)</span><a href="../../" style="text-decoration:none">← Back to portfolio</a></div></footer>
+<div class="toast">Link copied ✓</div>
+<script src="../../assets/site.js"></script>
+</body></html>
